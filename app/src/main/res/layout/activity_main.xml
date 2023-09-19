@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".windows.MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:layout_height="?android:attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:navigationIcon="@drawable/menu"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/store"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_22ssp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="sans-serif-black"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/ib_orders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cart"
+                android:background="@drawable/rounded_corner_shape"
+                android:padding="@dimen/_5sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="BUTTON" />
+
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:padding="@dimen/_10sdp"
+        android:background="@drawable/rounded_corner_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/sv_chip_group">
+
+        <ImageView
+            android:id="@+id/ib_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:src="@drawable/search" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingStart="@dimen/_5sdp"
+            android:text="@string/search_for_products"
+            android:textColor="@color/gray_icon"
+            android:textSize="@dimen/_12ssp" />
+
+        <ImageView
+            android:id="@+id/ib_tune_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:src="@drawable/tune"
+            app:tint="@color/gray_icon" />
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/sv_chip_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_bar">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_fruits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fruits"
+                android:textColor="@color/text_black"
+                app:chipBackgroundColor="@color/white"
+                app:chipIcon="@drawable/fruits"
+                app:chipIconTint="@color/primary_green"
+                app:chipStrokeWidth="0dp"
+                app:chipSurfaceColor="@color/primary_green" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_vegetables"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vegetables"
+                android:textColor="@color/text_black"
+                app:chipBackgroundColor="@color/white"
+                app:chipIcon="@drawable/vegetable"
+                app:chipIconTint="@color/primary_green"
+                app:chipStrokeWidth="0dp"
+                app:chipSurfaceColor="@color/primary_green" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_meat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/meat"
+                android:textColor="@color/text_black"
+                app:chipBackgroundColor="@color/white"
+                app:chipIcon="@drawable/meat"
+                app:chipIconTint="@color/primary_green"
+                app:chipStrokeWidth="0dp"
+                app:chipSurfaceColor="@color/primary_green" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_fish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fish"
+                android:textColor="@color/text_black"
+                app:chipBackgroundColor="@color/white"
+                app:chipIcon="@drawable/fish"
+                app:chipIconTint="@color/primary_green"
+                app:chipStrokeWidth="0dp"
+                app:chipSurfaceColor="@color/primary_green" />
+
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_product_listing"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sv_chip_group" />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
